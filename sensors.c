@@ -6,12 +6,14 @@
  *  Created on: Dec 5, 2013
  *  Author: C15Travis.Schriner
  *
- *  Description: This .c file contains the necessary
- *  			 methods required to operate the IR sensors
- *  			 on the USAFA DFEC robots utilized in
- *  			 ECE 382
+ *  Description: this .c file gives all the methods required to initialize
+ *  			 and utilize the IR sensors available on the robots utilized
+ *  			 by the USAFA DFEC in ECE 382. It is designed to use the
+ *  			 sensors in conjunction with an MSP430 microcontroller
+ *  			 with LEDs available on P1.0 and P1.6.
  *
  */
+
 
 //======================================================================
 //======================================================================
@@ -42,7 +44,7 @@ void initialize(){
  */
 void leftSensor() {
         ADC10CTL0 &= ~ENC;                // Sampling and conversion stop
-        ADC10CTL1 = INCH_3;               // input channel A4
+        ADC10CTL1 = INCH_3;               // input channel A3
         ADC10AE0 |= BIT3;                 // PA.1 ADC option select
         ADC10CTL0 |= ENC + ADC10SC;       // Sampling and conversion start
         __bis_SR_register(CPUOFF + GIE);  // LPM0, ADC10_ISR will force exit
