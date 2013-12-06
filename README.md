@@ -47,7 +47,7 @@ FUNCTIONS:
    * Input: Threshhold 
       * User defined threshhold for ADC to register detection
    * Output: Returns a 1 if detecting, a 0 if not
-   * Turns on LED on P1.0 if detecting, turns off if not
+   * Turns on LED on P1.6 if detecting, turns off if not
 
 
 
