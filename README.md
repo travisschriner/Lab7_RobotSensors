@@ -9,56 +9,56 @@ Description:
 FUNCTIONS:
 ===========
 
-void initialize();
+1. void initialize()
+   * Disables WDT
+   * Initializes ADC10CTL Register
+   * sets P1.0|P1.6 to out
 
-void leftSensor();
+2. void leftSensor()
+   * Input: P1.3
+   * Stops conversion
+   * changes input channel to A3
+   * Restarts Sampling and Conversion
+   * Puts CPU to sleep
 
-void rightSensor();
+3. void rightSensor()
+   * Input: P1.5
+   * Stops conversion
+   * changes input channel to A5
+   * Restarts Sampling and Conversion
+   * Puts CPU to sleep
 
-void centerSensor();
+4. void centerSensor()
+   * Input: P1.4
+   * Stops conversion
+   * changes input channel to A4
+   * Restarts Sampling and Conversion
+   * Puts CPU to sleep
 
-/*
- * Function: leftWall(int threshhold)
- *
- * Description: This function will return a 1 if the
- * 				sensor on pin 3 senses a wall. It will
- * 				return a 0 if no wall is detected.
- * 				It will also turn on the LED on P1.0
- * 				as long as the sensor detects a wall.
- *
- * 	Inputs: threshhold~ this is a user defined threshhold
- * 						level that can be calibrated
- * 						depending on the sensor, lighting,
- * 						wall, and many other factors.
- */
-int leftWall(int threshhold);
 
-/*
- * Function: rightWall(int threshhold)
- *
- * Description: This function will return a 1 if the
- * 				sensor on pin 5 senses a wall. It will
- * 				return a 0 if no wall is detected.
- * 				It will also turn on the LED on P1.6
- * 				as long as the sensor detects a wall.
- *
- * 	Inputs: threshhold~ this is a user defined threshhold
- * 						level that can be calibrated
- * 						depending on the sensor, lighting,
- * 						wall, and many other factors.
- */
-int rightWall(int threshhold);
+5. int leftWall(int threshhold)
+   * Input: Threshhold 
+      * User defined threshhold for ADC to register detection
+   * Output: Returns a 1 if detecting, a 0 if not
+   * Turns on LED on P1.0 if detecting, turns off if not
 
-/*
- * Function: frontWall(int threshhold)
- *
- * Description: This function will return a 1 if the
- * 				sensor on pin 4 senses a wall. It will
- * 				return a 0 if no wall is detected.
- *
- * 	Inputs: threshhold~ this is a user defined threshhold
- * 						level that can be calibrated
- * 						depending on the sensor, lighting,
- * 						wall, and many other factors.
- */
-int frontWall(int threshhold);
+
+6. int rightWall(int threshhold)
+   * Input: Threshhold 
+      * User defined threshhold for ADC to register detection
+   * Output: Returns a 1 if detecting, a 0 if not
+   * Turns on LED on P1.0 if detecting, turns off if not
+
+
+
+7. int frontWall(int threshhold)
+   * Input: Threshhold 
+      * User defined threshhold for ADC to register detection
+   * Output: Returns a 1 if detecting, a 0 if not
+   
+
+LEGAL
+=====
+
+My code is completely open source. 
+Please feel free to use any of it, just please document. Thank you.
