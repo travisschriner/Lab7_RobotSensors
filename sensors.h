@@ -8,12 +8,43 @@
 #ifndef SENSORS_H_
 #define SENSORS_H_
 
+
+/*
+ * Function: initialize()
+ * Description: This function sets up my ADC and P1.0 and P1.6
+ * 				to output so I can utilize the LEDs. It also stops
+ * 				the WDT
+ */
 void initialize();
 
+
+/*
+ * Function: leftSensor()
+ * Description: This function sets the necessary bits in
+ * 				my ADC10CTL register so my sensor on BIT3
+ * 				senses
+ * 	Inputs: P1.3
+ */
 void leftSensor();
 
+
+/*
+ * Function: rightSensor()
+ * Description: This function sets the necessary bits in
+ * 				my ADC10CTL register so my sensor on BIT5
+ * 				senses
+ * 	Inputs: P1.5
+ */
 void rightSensor();
 
+
+/*
+ * Function: centerSensor()
+ * Description: This function sets the necessary bits in
+ * 				my ADC10CTL register so my sensor on BIT4
+ * 				senses
+ * 	Inputs: P1.4
+ */
 void centerSensor();
 
 /*
