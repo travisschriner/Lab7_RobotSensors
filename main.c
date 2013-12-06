@@ -21,7 +21,7 @@
 int main(void)
 {
 
-  initialize();
+  initializeSensors();
 
   for (;;)
   {

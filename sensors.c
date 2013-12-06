@@ -24,7 +24,7 @@
  * 				to output so I can utilize the LEDs. It also stops
  * 				the WDT
  */
-void initialize(){
+void initializeSensors(){
 
 	 WDTCTL = WDTPW + WDTHOLD;                   // Stop WDT
 	 ADC10CTL0 &= ~ENC;                          // Sampling and conversion stop

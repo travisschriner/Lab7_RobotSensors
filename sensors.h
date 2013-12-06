@@ -15,7 +15,7 @@
  * 				to output so I can utilize the LEDs. It also stops
  * 				the WDT
  */
-void initialize();
+void initializeSensors();
 
 
 /*
