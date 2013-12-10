@@ -27,10 +27,10 @@ int main(void)
   {
 
 	leftSensor();
-    leftWall(0x1D0);
+    leftWall(0x1FF);
 
     rightSensor();
-    rightWall(0x1D0);
+    rightWall(0x1FF);
 
 
   }

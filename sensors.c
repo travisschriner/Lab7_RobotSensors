@@ -32,6 +32,7 @@ void initializeSensors(){
 	 ADC10AE0 |= BIT3;                           // PA.1 ADC option select
 	 ADC10CTL0 = ADC10SHT_3 + ADC10ON + ADC10IE; // ADC10ON, interrupt enabled
 	 ADC10CTL1 |= ADC10SSEL1|ADC10SSEL0;         // Select SMCLK
+	 ADC10CTL1 |= (ADC10DIV1|ADC10DIV2|ADC10DIV0);
 	 P1DIR |= (BIT0|BIT6);                       // Set P1.0 and P1.6 to output direction
 }
 
@@ -44,6 +45,7 @@ void initializeSensors(){
  */
 void leftSensor() {
         ADC10CTL0 &= ~ENC;                // Sampling and conversion stop
+        ADC10CTL1 &= ~(INCH_3|INCH_4|INCH_5);
         ADC10CTL1 = INCH_3;               // input channel A3
         ADC10AE0 |= BIT3;                 // PA.1 ADC option select
         ADC10CTL0 |= ENC + ADC10SC;       // Sampling and conversion start
@@ -62,6 +64,7 @@ void leftSensor() {
  */
 void rightSensor() {
         ADC10CTL0 &= ~ENC;                 // Sampling and conversion stop
+        ADC10CTL1 &= ~(INCH_3|INCH_4|INCH_5);
         ADC10CTL1 = INCH_5;                // input channel A5
         ADC10AE0 |= BIT5;                  // PA.3 ADC option select
         ADC10CTL0 |= ENC + ADC10SC;        // Sampling and conversion start
@@ -77,6 +80,7 @@ void rightSensor() {
  */
 void centerSensor(){
         ADC10CTL0 &= ~ENC;                 // Sampling and conversion stop
+        ADC10CTL1 &= ~(INCH_3|INCH_4|INCH_5);
         ADC10CTL1 = INCH_4;                // input channel A4
         ADC10AE0 |= BIT4;                  // PA.2 ADC option select
         ADC10CTL0 |= ENC + ADC10SC;        // Sampling and conversion start
